@@ -17,7 +17,7 @@ services:
       - "8983:8983"
       - "9000:9000"
     volumes:
-      - ./filemgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
+      - ./config:/usr/local/oodt/workflows
       - jobs:/usr/local/oodt/jobs
       - archive:/usr/local/oodt/archive
 
@@ -32,8 +32,7 @@ services:
     environment:
       - "FILEMGR_URL=http://filemgr:9000"
     volumes:
-      - ./wmgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
-      - ./wmgr_config/pge-configs/:/usr/local/oodt/workflows/test-workflow/pge-configs/
+      - ./config/:/usr/local/oodt/workflows
       - ./pges:/usr/local/oodt/pges/
       - jobs:/usr/local/oodt/jobs
       - archive:/usr/local/oodt/archive
