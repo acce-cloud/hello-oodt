@@ -77,7 +77,7 @@ The OODT services can be accesed at the following URLs, from within the containe
 
 * Workflow Manager: http://wmgr:9001 (POST only)
 * File manager: http://filemgr:9000 (POST only)
-* Solr: http://filemgr:8983/solr/oodt-fm/select?q=*:* (query for all products)
+* Solr: 'http://filemgr:8983/solr/oodt-fm/select?q=*%3A*&wt=json&indent=true'(query for all products)
 
 
 ### Start/Stop/Restart services
