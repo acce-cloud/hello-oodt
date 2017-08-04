@@ -19,7 +19,7 @@ This tutorial is based on Docker images built from OODT 1.0.
     
     cd hello-oodt
   
-2. Optionally: pre-download the OODT images:
+2. Optionally: pre-download the OODT images (will make the next step faster):
 
     docker pull oodthub/oodt-filemgr:latest
     
