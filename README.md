@@ -49,7 +49,7 @@ This tutorial is based on Docker images built from OODT 1.0.
     
     [root@cde456] ls -l $OODT_HOME/jobs
     
-    [root@cde456] ls -l $OODT_ARCHIVE
+    [root@cde456] ls -l $OODT_ARCHIVE/test-workflow
     
     [root@cde456] curl 'http://localhost:8983/solr/oodt-fm/select?q=*%3A*&wt=json&indent=true'
     
@@ -95,9 +95,5 @@ The OODT services can be accesed at the following URLs, from within the containe
 * Workflow Manager: $OODT_HOME/cas-workflow/logs/cas-workflow.log
 * File Manager: $OODT_HOME/cas-filemgr/logs/cas_filemgr.log
 * Supervisor: /tmp/supervisord.log
-
-* URLs
-
-
 
 * How to extend:
