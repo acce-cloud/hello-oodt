@@ -59,9 +59,13 @@ This tutorial is based on Docker images built from OODT 1.0.
 
 ## Notes
 
-* Configuration: the following directories contain the OODT configuration for this particular tutorial, and are cross-mounted from the local host into the Docker containers:
+* Configuration
 
-   ./
+The following directories contain the OODT configuration for this particular tutorial, and are cross-mounted from the local host into the Docker containers WM or FM):
+  * Workflow definition: ./wmgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
+  * PGEs (programs to be executed): ./pges:/usr/local/oodt/pges/
+  * PGE configurations: ./wmgr_config/pge-configs/:/usr/local/oodt/workflows/test-workflow/pge-configs/
+  * Product types: ./filemgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
 
 * Within each container, OODT services are started through supervisord. To start/stop/restart a service (within the appropriate container):
 
