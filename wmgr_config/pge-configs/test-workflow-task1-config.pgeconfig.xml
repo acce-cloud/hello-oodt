@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pgeConfig>
+
+	<!-- PGE commands -->
+	<exe dir="[JobDir]" shell="/bin/bash">
+		<cmd>cd [JobDir]</cmd>
+                <cmd>/usr/local/bin/python [PGE_ROOT]/test-workflow/pge.py --size 1 --heap 1 --time 10 --out output_Run_[Run]_Task_1.out</cmd>
+	</exe>
+
+	<customMetadata>
+		<metadata key="ProductionDateTime" val="[DATE.UTC]" />
+		<metadata key="JobDir" val="[OODT_HOME]/jobs/[WorkflowInstId]" />
+	</customMetadata>
+
+</pgeConfig>

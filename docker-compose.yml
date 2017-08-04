@@ -1,0 +1,44 @@
+# docker-compose file for 'hello-oodt' example:
+# o starts up a Workflow Manager and a File Manager container running on the same Docker host
+# o configures the Workflow Manager and File Manager to execute the 'test-workflow' workflow
+
+version: '3'
+
+services:
+
+  # OODT file manager
+  oodt_filemgr:
+    image: oodthub/oodt-filemgr
+    container_name: filemgr
+    expose:
+      - "9000"
+      - "8983"
+    ports:
+      - "8983:8983"
+      - "9000:9000"
+    volumes:
+      - ./filemgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
+      - jobs:/usr/local/oodt/jobs
+      - archive:/usr/local/oodt/archive
+
+  # OODT workflow manager
+  oodt_wmgr:
+    image: oodthub/oodt-wmgr
+    container_name: wmgr
+    expose:
+      - "9001"
+    ports:
+      - "9001"
+    environment:
+      - "FILEMGR_URL=http://filemgr:9000"
+    volumes:
+      - ./wmgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
+      - ./wmgr_config/pge-configs/:/usr/local/oodt/workflows/test-workflow/pge-configs/
+      - ./pges:/usr/local/oodt/pges/
+      - jobs:/usr/local/oodt/jobs
+      - archive:/usr/local/oodt/archive
+
+# shared data volumes
+volumes:
+  jobs:
+  archive:

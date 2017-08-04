@@ -1,0 +1,5 @@
+#!sh
+cd /usr/local/oodt/pges/test-workflow/jobs/4d162390-78f0-11e7-acf7-e9f67c1c7fa0
+echo $PATH
+/usr/local/bin/python /usr/local/oodt/pges/test-workflow/pge.py --size 1 --heap 1 --time 10 --out output_Run_1_Task_1.out
+
