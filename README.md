@@ -60,7 +60,11 @@ This tutorial is based on Docker images built from OODT 1.0.
 * Within each container, OODT services are started through supervisord. To start/stop/restart a service (within the appropriate container):
 
    supervisorctl restart oodt_wmgr
+   
    supervisorctl restart oodt_filemgr
+   
+   configuration files: /etc/supervisor/supervisord.conf and /etc/supervisor/conf.d/\*.conf
+   log file: /tmp/supervisord.log
    
 * Log files
 
