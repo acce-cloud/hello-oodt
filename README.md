@@ -16,12 +16,28 @@ This tutorial is based on Docker images built from OODT 1.0.
 1. Download the source code from this GitHub repository:
 
     git clone https://github.com/oodt-cloud/hello-oodt.git
+    
+    cd hello-oodt
   
 2. Optionally: pre-download the OODT images:
 
     docker pull oodthub/oodt-filemgr:latest
     
     docker pull oodthub/oodt-wmgr:latest
+    
+3. Start the docker containers:
+
+    docker-compose up -d
+    
+    docker-compose logs -f
+    
+ 4. Submit a test-workflow (from inside the WM container):
+ 
+    docker exec -it wmgr /bin/bash
+    
+    # cd $OODT_HOME/cas-workflow/bin
+    
+    # ./wmgr-client --url http://localhost:9001 --operation --sendEvent --eventName test-workflow --metaData --key Dataset abc --key Project 123  --key Run 1
 
 
 ## Notes
