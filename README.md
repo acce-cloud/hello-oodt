@@ -61,7 +61,7 @@ This tutorial is based on Docker images built from OODT 1.0.
 
 ### Important directories
 
-The following directories contain the OODT configuration for this particular tutorial, and are cross-mounted from the local host into the Docker containers WM or FM):
+The following directories contain the OODT configuration for this particular tutorial, and are cross-mounted from the local host into the Docker containers (WM or FM):
 * Workflow definition: ./wmgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
 * PGEs (programs to be executed): ./pges:/usr/local/oodt/pges/
 * PGE configurations: ./wmgr_config/pge-configs/:/usr/local/oodt/workflows/test-workflow/pge-configs/
@@ -71,6 +71,16 @@ The following directories are managed by Docker but shared between the WM and FM
 * jobs: /usr/local/oodt/jobs
 * archive: /usr/local/oodt/archive
 
+### Access URLs
+
+The OODT services can be accesed at the following URLs, from within the containers:
+
+* Workflow Manager: http://wmgr:9001 (POST only)
+* File manager: http://filemgr:9000 (POST only)
+* Solr: http://filemgr:8983/solr/oodt-fm/select?q=*:* (query for all products)
+
+
+### Start/Stop/Restart services
 * Within each container, OODT services are started through supervisord. To start/stop/restart a service (within the appropriate container):
 
    supervisorctl restart oodt_wmgr
@@ -80,7 +90,11 @@ The following directories are managed by Docker but shared between the WM and FM
    configuration files: /etc/supervisor/supervisord.conf and /etc/supervisor/conf.d/\*.conf
    log file: /tmp/supervisord.log
    
-* Log files
+### Log files
+
+* Workflow Manager: $OODT_HOME/cas-workflow/logs/cas-workflow.log
+* File Manager: $OODT_HOME/cas-filemgr/logs/cas_filemgr.log
+* Supervisor: /tmp/supervisord.log
 
 * URLs
 
