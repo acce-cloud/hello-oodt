@@ -79,14 +79,12 @@ The OODT services can be accesed at the following URLs, from within the containe
 
 
 ### Start/Stop/Restart services
-* Within each container, OODT services are started through supervisord. To start/stop/restart a service (within the appropriate container):
 
-   supervisorctl restart oodt_wmgr
-   
-   supervisorctl restart oodt_filemgr
-   
-   configuration files: /etc/supervisor/supervisord.conf and /etc/supervisor/conf.d/\*.conf
-   log file: /tmp/supervisord.log
+Within each container, OODT services are started through supervisord, but then deamonize themselves. The best way to stop/start/restart the services is to do it outside the containers using the docker-compose utilities, for example:
+
+docker-compose stop/start/restart oodt_filemgr
+docker-compose stop/start/restart oodt_wmgr
+docker-compose stop/start/restart
    
 ### Log files
 
