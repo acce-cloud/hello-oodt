@@ -47,10 +47,25 @@ This tutorial is based on Docker images built from OODT 1.0.
     
     ls -l $OODT_ARCHIVE
     
-    curl 'http://localhost:8983/solr/#/oodt-fm/query
+    curl 'http://localhost:8983/solr/#/oodt-fm/query'
     
 
 
 ## Notes
+
+* Configuration: the following directories contain the OODT configuration for this particular tutorial, and are cross-mounted from the local host into the Docker containers:
+
+   ./
+
+* Within each container, OODT services are started through supervisord. To start/stop/restart a service (within the appropriate container):
+
+   supervisorctl restart oodt_wmgr
+   supervisorctl restart oodt_filemgr
+   
+* Log files
+
+* URLs
+
+
 
 * How to extend:
