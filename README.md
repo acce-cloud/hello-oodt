@@ -94,7 +94,7 @@ The OODT services can be accesed at the following URLs, from within the containe
 * File Manager: $OODT_HOME/cas-filemgr/logs/cas_filemgr.log
 * Supervisor: /tmp/supervisord.log
 
-## How to extend
+### How to extend
 
 The WM and FM containers are configured to automatically look for workflows and product types in all sub-directories of the root directory $OODT_CONFIG = $OODT_HOME/workflows, which is mapped to the local host directory ./config. To add a new workflow:
 * add the workflow and product type definitions to ./config/new-workflow/policy
