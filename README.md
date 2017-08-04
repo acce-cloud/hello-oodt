@@ -51,7 +51,9 @@ This tutorial is based on Docker images built from OODT 1.0.
     
     [root@cde456] ls -l $OODT_ARCHIVE
     
-    [root@cde456] curl 'http://localhost:8983/solr/#/oodt-fm/query'
+    [root@cde456] curl 'http://localhost:8983/solr/oodt-fm/select?q=*%3A*&wt=json&indent=true'
+    
+    [root@cde456] cat $OODT_HOME/cas-filemgr/logs/cas_filemgr.log
     
 
 
