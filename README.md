@@ -13,12 +13,12 @@ This tutorial is based on Docker images built from OODT 1.0.
 
 ## Quick Start
 
-* Download the source code from this GitHub repository:
-git clone https://github.com/oodt-cloud/hello-oodt.git
+1. Download the source code from this GitHub repository
+    git clone https://github.com/oodt-cloud/hello-oodt.git
   
-* Optionally: pre-download the OODT images:
-docker pull oodthub/oodt-filemgr:latest
-docker pull oodthub/oodt-wmgr:latest
+2. Optionally: pre-download the OODT images:
+    docker pull oodthub/oodt-filemgr:latest
+    docker pull oodthub/oodt-wmgr:latest
 
 
 ## Notes
