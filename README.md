@@ -35,9 +35,20 @@ This tutorial is based on Docker images built from OODT 1.0.
  
     docker exec -it wmgr /bin/bash
     
-    # cd $OODT_HOME/cas-workflow/bin
+    cd $OODT_HOME/cas-workflow/bin
     
-    # ./wmgr-client --url http://localhost:9001 --operation --sendEvent --eventName test-workflow --metaData --key Dataset abc --key Project 123  --key Run 1
+    ./wmgr-client --url http://localhost:9001 --operation --sendEvent --eventName test-workflow --metaData --key Dataset abc --key Project 123  --key Run 1
+    
+ 5. Verify that products were generated and ingested (from inside the FM container):
+ 
+    docker exec -it filemgr /bin/bash
+    
+    ls -l $OODT_HOME/jobs
+    
+    ls -l $OODT_ARCHIVE
+    
+    curl 'http://localhost:8983/solr/#/oodt-fm/query
+    
 
 
 ## Notes
