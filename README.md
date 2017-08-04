@@ -19,7 +19,7 @@ This tutorial is based on Docker images built from OODT 1.0.
   
 2. Optionally: pre-download the OODT images:
 
-    docker pull oodthub/oodt-filemgr:latest
+    docker pull oodthub/oodt-filemgr:lates
     docker pull oodthub/oodt-wmgr:latest
 
 
