@@ -51,13 +51,23 @@ This tutorial is based on Docker images built from OODT 1.0. The system architec
     
  5. Verify that products were generated and ingested (from inside the FM container):
  
+    Open yet another terminal window, then:
+ 
     docker exec -it filemgr /bin/bash
     
-    [root@cde456] ls -l $OODT_HOME/jobs
+    Inspect the job execution directory:
+    
+    [root@cde456] ls -l $OODT_HOME/jobs/\*
+    
+    List the content of the File Manager archive:
     
     [root@cde456] ls -l $OODT_ARCHIVE/test-workflow
     
+    Make a metadata request to the Solr back-end:
+    
     [root@cde456] curl 'http://localhost:8983/solr/oodt-fm/select?q=*%3A*&wt=json&indent=true'
+    
+    Inspect the File Manager log file:
     
     [root@cde456] cat $OODT_HOME/cas-filemgr/logs/cas_filemgr.log
     
