@@ -105,7 +105,7 @@ docker-compose stop/start/restart oodt_filemgr
 
 docker-compose stop/start/restart oodt_wmgr
 
-docker-compose stop/start/restart
+docker-compose stop/start/restart (all services)
    
 ### Log files
 
