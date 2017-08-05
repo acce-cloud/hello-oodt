@@ -62,10 +62,8 @@ This tutorial is based on Docker images built from OODT 1.0.
 ### Important directories
 
 The following directories contain the OODT configuration for this particular tutorial, and are cross-mounted from the local host into the Docker containers (WM or FM):
-* Workflow definition: ./wmgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
+* WM and FM configurations: ./config:/usr/local/oodt/workflows
 * PGEs (programs to be executed): ./pges:/usr/local/oodt/pges/
-* PGE configurations: ./wmgr_config/pge-configs/:/usr/local/oodt/workflows/test-workflow/pge-configs/
-* Product types: ./filemgr_config/policy/:/usr/local/oodt/workflows/test-workflow/policy/
 
 The following directories are managed by Docker but shared between the WM and FM containers:
 * jobs: /usr/local/oodt/jobs
@@ -77,18 +75,18 @@ The OODT services can be accesed at the following URLs, from within the containe
 
 * Workflow Manager: http://wmgr:9001 (POST only)
 * File manager: http://filemgr:9000 (POST only)
-* Solr: 'http://filemgr:8983/solr/oodt-fm/select?q=*%3A*&wt=json&indent=true'(query for all products)
+* Solr: 'http://filemgr:8983/solr/oodt-fm/select?q=*%3A*&wt=json&indent=true' (query for all products)
 
 
 ### Start/Stop/Restart services
-* Within each container, OODT services are started through supervisord. To start/stop/restart a service (within the appropriate container):
 
-   supervisorctl restart oodt_wmgr
-   
-   supervisorctl restart oodt_filemgr
-   
-   configuration files: /etc/supervisor/supervisord.conf and /etc/supervisor/conf.d/\*.conf
-   log file: /tmp/supervisord.log
+Within each container, OODT services are started through supervisord, but then deamonize themselves. The best way to stop/start/restart the services is to do it outside the containers using the docker-compose utilities, for example:
+
+docker-compose stop/start/restart oodt_filemgr
+
+docker-compose stop/start/restart oodt_wmgr
+
+docker-compose stop/start/restart
    
 ### Log files
 
@@ -96,4 +94,10 @@ The OODT services can be accesed at the following URLs, from within the containe
 * File Manager: $OODT_HOME/cas-filemgr/logs/cas_filemgr.log
 * Supervisor: /tmp/supervisord.log
 
-* How to extend:
+### How to extend
+
+The WM and FM containers are configured to automatically look for workflows and product types in all sub-directories of the root directory $OODT_CONFIG = $OODT_HOME/workflows, which is mapped to the local host directory ./config. To add a new workflow:
+* add the workflow and product type definitions to ./config/new-workflow/policy
+* add the PGE configurations to ./config/new-workflow/pge-configs (referencing PGEs located under $PGE_ROOT)
+* add the PGEs to ./pges/new-workflow
+
