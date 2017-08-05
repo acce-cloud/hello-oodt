@@ -95,6 +95,7 @@ The OODT services can be accesed at the following URLs, from within the containe
 * File manager: http://filemgr:9000 (POST only)
 * Solr: 'http://filemgr:8983/solr/oodt-fm/select?q=*%3A*&wt=json&indent=true' (query for all products)
 
+From outside the containers, the same URLs can be accessed as "localhost", or at the IP address used by the Docker Host engine.
 
 ### Start/Stop/Restart services
 
