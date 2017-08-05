@@ -47,6 +47,8 @@ This tutorial is based on Docker images built from OODT 1.0. The system architec
     
     [root@abc123] tail -f $OODT_HOME/cas-workflow/logs/cas_workflow.log
     
+    When the workflow has finished executing, the log file will show the message "Ingests were successful".
+    
  5. Verify that products were generated and ingested (from inside the FM container):
  
     docker exec -it filemgr /bin/bash
