@@ -71,7 +71,9 @@ This tutorial is based on Docker images built from OODT 1.0. The system architec
     
     [root@cde456] cat $OODT_HOME/cas-filemgr/logs/cas_filemgr.log
     
+6. Stop the running containers. In the first terminal window, type "ctrl-C" to end the Docker log display, then:
 
+   docker-compose down
 
 ## Notes
 
