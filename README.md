@@ -8,7 +8,7 @@ running in separate Docker containers on the same host. The WM is configured to 
 This tutorial is based on Docker images built from OODT 1.0. The system architecture is shown in the attached image file.
 
 ## Pre-Requisites
-* Docker engine installed on the host (Linux, Mac or Windows)
+* Docker (for Linux, Mac or Windows)
 * Git
 
 ## Quick Start
