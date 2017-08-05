@@ -27,12 +27,16 @@ This tutorial is based on Docker images built from OODT 1.0. The system architec
     
 3. Start the docker containers:
 
+    Open a terminal window, then:
+
     docker-compose up -d
     
     docker-compose logs -f
     
  4. Submit a test-workflow (from inside the WM container):
  
+    Open another terminal window, then:
+    
     docker exec -it wmgr /bin/bash
     
     [root@abc123] cd $OODT_HOME/cas-workflow/bin
