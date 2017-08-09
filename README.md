@@ -1,4 +1,5 @@
 # hello-oodt
+Introductory tutorial for using OODT services as Docker containers.
 
 ## Summary
 This tutorial provides a simple introduction to using OODT services as Docker containers. 
