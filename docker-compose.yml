@@ -8,7 +8,7 @@ services:
 
   # OODT file manager
   oodt_filemgr:
-    image: oodthub/oodt-filemgr
+    image: acce/oodt-filemgr:2.0
     container_name: filemgr
     expose:
       - "9000"
@@ -23,7 +23,7 @@ services:
 
   # OODT workflow manager
   oodt_wmgr:
-    image: oodthub/oodt-wmgr
+    image: acce/oodt-wmgr:2.0
     container_name: wmgr
     expose:
       - "9001"
