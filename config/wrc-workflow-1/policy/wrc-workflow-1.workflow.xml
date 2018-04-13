@@ -1,0 +1,12 @@
+<cas:workflow xmlns:cas="http://oodt.jpl.nasa.gov/1.0/cas" 
+              name="WRC Workflow 1" 
+              id="urn:oodt:WrcWorkflow1">
+
+  <tasks>
+  	
+    <task id="urn:oodt:MetadataExtractionTask" />
+    <task id="urn:oodt:DataArchivingTask" />
+    
+  </tasks>
+
+</cas:workflow>
